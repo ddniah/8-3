@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Courgette&family=Lobster&family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Thiệp Chúc Mừng 8-3</title>
+</head>
+<body>
+    
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Đang tải...</p>
+    </div>
+    
+    <div class="card" style="display: none;"> 
+        <h1 class="title">Chúc Mừng Ngày Quốc Tế Phụ Nữ <br>8-3-2025</h1>
+        <div class="message" id="message">
+            <p class="message-text">
+                Nhân dịp ngày Quốc Tế Phụ Nữ 8-3, NgHaii xin gửi những lời chúc tốt đẹp nhất đến các bạn nữ nè. 
+            </p>
+            <p class="message-text">
+                Các bạn là những cô gái đầy nhiệt huyết, xinh đẹp và đặc biệt theo cách riêng của mình.
+            </p>
+            <p class="message-text">
+                Tui hy vọng rằng mỗi ngày trôi qua sẽ mang đến cho các bạn nhiều niềm vui, hạnh phúc và thành công. Cảm ơn các bạn đã luôn mang đến những màu sắc mới mẻ cho thế giới này, và tui thật sự rất hạnh khi được đồng hành cùng những người tuyệt vời như các bạn! ❤️
+            </p>
+        </div>
+        <button class="open-letter" onclick="toggleMessage()">Mở Thư</button>
+        <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https:ddniah.github.io/8-3" target="_blank" rel="noopener noreferrer" onclick="return shareFacebook(event)">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        
+        <script>
+            function shareFacebook(event) {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+                var url = encodeURIComponent(window.location.href);
+                var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+        
+                var newWindow = window.open(facebookShareUrl, '_blank', 'width=600,height=400');
+                if (!newWindow) {
+                    alert("Vui lòng cho phép cửa sổ bật lên để chia sẻ trên Facebook.");
+                }
+                return false; // Ngăn chặn điều hướng mặc định của <a>
+            }
+        </script>
+        
+        
+        <div class="footer">
+            <p>Từ NgHaii tới những bạn nữ xinh đẹp </p>
+        </div>
+    </div>
+    
+    <div id="flowers"></div> 
+    <div id="bubbles"></div> 
+    <audio id="letter-sound" src="sound/S1.mp3" preload="auto"></audio>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <script src="config.js"></script>
+</body>
+</html>
